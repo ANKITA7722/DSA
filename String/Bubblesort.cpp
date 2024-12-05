@@ -15,6 +15,6 @@ int main ()
 {
     int arr[]={5, 2, 4, 6, 1, 3};
     int s=sizeof(arr)/sizeof(arr[0]);
-    cout<<sum(arr,s)
+    cout<<sum(arr,s)//array ki lenth ke liye s define kiya hai
 }
 
