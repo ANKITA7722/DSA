@@ -33,3 +33,82 @@ int main() {
 output:-it is not empty
 4	5	4	21	
 it is empty
+
+
+//==========================================================================
+//date:-05/12/2024 day:guruwar
+#include<iostream>
+#include<stack>
+using namespace std;
+bool valid(string &s,int len)
+{
+    bool r=true;
+    stack<char>stk;
+    for(int i=0; i<len; i++)
+    {
+        if(s[i]=='{' || s[i]=='(' || s[i]=='['  )
+        {
+            stk.push(s[i]);
+        }
+        else if(s[i]=='}')
+        {
+            if(!stk.empty() && stk.top() == '{')
+            {
+                stk.pop();
+            }
+            else
+            {
+                r=false;
+                break;
+            }
+        }
+        else if(s[i]==')')
+        {
+            if(!stk.empty() && stk.top()=='(')
+            {
+                stk.pop();
+            }
+            else
+            {
+                r=false;
+                break;
+            }
+        }
+        else
+        {
+            if(!stk.empty() && stk.top()=='[')
+            {
+                stk.pop();
+            }
+            else
+            {
+                r=false;
+                break;
+            }
+        }
+    }
+
+if(!stk.empty())
+{
+    return false;
+}
+else
+{
+    return true;
+}
+}
+int main()
+{
+
+    string s="[{}]";
+    bool i=valid(s,s.length());
+    if(i)
+    {
+        cout<<"valid";
+    }
+    else
+    {
+        cout<<"invalid";
+    }
+}
+output:- valid
