@@ -36,7 +36,6 @@ int main ()
    }
 }
 
-
 //program 3nd
 
 #include<iostream>
