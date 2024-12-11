@@ -32,7 +32,6 @@ int main ()
    for(auto p:v)
    {
        cout<<p;
-
    }
 }
 
